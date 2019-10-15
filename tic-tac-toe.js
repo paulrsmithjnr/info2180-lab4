@@ -7,6 +7,8 @@ window.onload = function() {
      for (let i = 0; i < children.length; i++){
          children[i].classList.add("square");
          children[i].onclick = function () {whenClicked(children[i], i)};
+         children[i].onmouseover = function () {whenMouseIsOver(children[i])};
+         children[i].onmouseout = function () {whenMouseIsNotOver(children[i])};
      }
 
      function whenClicked(child, index) {
@@ -27,6 +29,14 @@ window.onload = function() {
          }
          
      }
+
+     function whenMouseIsOver(child) {
+         child.classList.add("hover");
+     }
+
+     function whenMouseIsNotOver(child) {
+        child.classList.remove("hover");
+    }
 
      
 
